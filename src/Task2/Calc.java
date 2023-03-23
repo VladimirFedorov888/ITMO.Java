@@ -37,12 +37,12 @@ public class Calc {
         return a * b;
     }
 
-    public static int divide(int a, int b) {
-        return a / b;
+    public static double divide(int a, int b) {
+        return (double)a / b;
     }
 
-    public static long divide(long a, long b) {
-        return a / b;
+    public static double divide(long a, long b) {
+        return (double)a / b;
     }
 
     public static double divide(double a, double b) {
