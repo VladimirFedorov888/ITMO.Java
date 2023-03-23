@@ -1,4 +1,4 @@
-package Task2;
+package Task02;
 
 public class Entity {
     private int id;

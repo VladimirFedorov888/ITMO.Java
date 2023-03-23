@@ -1,4 +1,4 @@
-package Task2;
+package Task02;
 
 public class Calc {
     public static int sum(int a, int b) {
