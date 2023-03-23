@@ -47,29 +47,27 @@ public class Part01 {
         System.out.println("Результат: " + result);
     }
 
-    public static void ex05() {
-        int[] numbers = {1, 2, 3, 4, 5};
-        boolean result = (numbers[0] == 3 || numbers[numbers.length - 1] == 3);
+    public static void ex05(int[] array) {
+        boolean result = (array[0] == 3 || array[array.length - 1] == 3);
         if (result) {
-            System.out.println("Число 3 появляется как первый или последний элемент массива");
+            System.out.println(result);
         } else {
-            System.out.println("Число 3 не появляется как первый или последний элемент массива");
+            System.out.println(result);
         }
     }
 
-    public static void ex06() {
-        int[] numbers = {2, 4, 1, 6, 8};
+    public static void ex06(int[] array) {
         boolean result = false;
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] == 1 || numbers[i] == 3) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == 1 || array[i] == 3) {
                 result = true;
                 break;
             }
         }
         if (result) {
-            System.out.println("Массив содержит число 1 или 3");
+            System.out.println(result);
         } else {
-            System.out.println("Массив не содержит число 1 или 3");
+            System.out.println(result);
         }
     }
 
@@ -78,8 +76,8 @@ public class Part01 {
         ex02();
         ex03();
         ex04();
-        ex05();
-        ex06();
+        ex05(new int[]{3, -12, 7, 4, 5, 4, 3});
+        ex06(new int[]{1, -12, 7, 4, 5, 4, 0});
 
 
 
