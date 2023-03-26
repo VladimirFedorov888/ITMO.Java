@@ -22,8 +22,8 @@ public class Main {
         }
         return true; // если все символы совпали, слово является палиндромом
     }
-    public static String censorText(String text) {
-        String censoredText = text.replaceAll("бяка", "[вырезано цензурой]"); // заменяем все вхождения слова "бяка"
+    public static String censorText(String text, String censored) {
+        String censoredText = text.replaceAll("бяка", censored); // заменяем все вхождения слова "бяка"
         return censoredText; // возвращаем цензурированный текст
     }
 
@@ -36,21 +36,26 @@ public class Main {
         }
         return count; // возвращаем количество вхождений
     }
-    public static String reverseLettersInWords(String text) {
-        String[] words = text.split(" "); // разбиваем текст на слова
-        StringBuilder reversedText = new StringBuilder(); // переменная для хранения инвертированной строки
-        for (int i = 0; i < words.length; i++) { // перебираем слова
-            String reversedWord = new StringBuilder(words[i]).reverse().toString(); // инвертируем порядок букв в каждом слове
-            reversedText.append(reversedWord).append(" "); // добавляем каждое инвертированное слово в инвертированную строку
+    public static String reverseLettersInWords(String str) {
+        String[] words = str.split(" "); // разбиваем строку на слова
+        StringBuilder result = new StringBuilder(); // создаем объект StringBuilder для конкатенации инвертированных слов
+
+        for (String word : words) {
+            StringBuilder invertedWord = new StringBuilder(word); // создаем объект StringBuilder для инвертирования символов в слове
+            invertedWord.reverse(); // инвертируем порядок символов в слове
+            result.append(invertedWord).append(" "); // добавляем инвертированное слово в StringBuilder-результат, разделяя его пробелом
         }
-        return reversedText.toString().trim(); // возвращаем инвертированную строку без пробелов в начале и конце
+
+        result.deleteCharAt(result.length() - 1); // удаляем последний пробел из результата
+        return result.toString(); // возвращаем инвертированные слова в виде строки
     }
     public static void main(String[] args) {
         findLongestWord("Строка в которой надо найти самое длинное слово трататататататататат");
         System.out.println(isPalindrome("шалаши"));
-        System.out.println(censorText("бяка пошла гулять и встретила другую бяка с бяка в кармане"));
+        System.out.println(censorText("бяка пошла гулять и встретила другую бяка с бяка в кармане", "---------"));
         System.out.println("Количество вхождений: " + countSubstringOccurrences("строка для проверки количетва вхождений слова строка", "строка"));
         System.out.println(reverseLettersInWords("Эту строку надо инвертировать"));
     }
+
 
 }
