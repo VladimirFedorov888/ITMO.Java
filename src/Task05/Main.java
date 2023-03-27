@@ -34,7 +34,7 @@ public class Main {
             count++; // увеличиваем счетчик
             index = text.indexOf(substring, index + 1); // ищем следующее вхождение после предыдущего
         }
-        return count; // возвращаем количество вхождений
+        return count; //    возвращаем количество вхождений
     }
     public static String reverseLettersInWords(String str) {
         String[] words = str.split(" "); // разбиваем строку на слова
