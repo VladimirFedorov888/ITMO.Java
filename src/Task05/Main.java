@@ -52,7 +52,7 @@ public class Main {
     public static void main(String[] args) {
         findLongestWord("Строка в которой надо найти самое длинное слово трататататататататат");
         System.out.println(isPalindrome("шалаши"));
-        System.out.println(censorText("бяка пошла гулять и встретила другую бяка с бяка в кармане", "---------"));
+        System.out.println(censorText("бяка пошла гулять и встретила другую бяка с бяка в кармане", "--------------------"));
         System.out.println("Количество вхождений: " + countSubstringOccurrences("строка для проверки количетва вхождений слова строка", "строка"));
         System.out.println(reverseLettersInWords("Эту строку надо инвертировать"));
     }
